@@ -1,0 +1,17 @@
+<!--help.html-->
+<view class="topnavs">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}，您好！</text>
+  </view>
+</view>
+<view class="weui-article">
+  <view class="weui-article__h1">一：关于本程序</view>
+  <view class="weui-article__h2">1.如何使用</view>
+  <view class="weui-article__p">　　这是一个二维码防伪验证系统，既然是二维码防伪验证那肯定是要你去扫二位码了,但是注意：</view>
+  <view class="weui-article__p weui-msg__desc">－>在本程序当中只认可在StringAir平台注册的商品，如果出现非本台产品，请联系管理员添加，商品信息可以去https://stringair.xin/product/index.html查看</view>
+  <view class="weui-article__h2">2.开发来源</view>
+  <view class="weui-article__p">　　设计源于毕业设计，在阉割部分功能后上线，可能有不完善的地方会进一步改进。如果想查看源码（捂脸），可以移步我的github。</view>
+  <view class="weui-article__h1">二：说点什么</view>
+  <view class="weui-article__p">　　这是我第一次尝试把代码放到生产环境运行，可能有很多弱鸡的地方，但是总体还可以（虽然界面辣眼睛），开发路程也遇到了一些问题（还好有百度），但是很快就得到了解决（前前后后拖了三星期），说一下被阉割的部分的程序吧（真的感觉是很奇怪的需求）：我在Server端留了商品信息的接口，本来可以通过接口请求拿到信息来展示，但是我觉得再工作之余强行写一个List似乎意义也不是太大，而毕业的要求也全部完成了。关于这个首页列表的拉取就留给那些用小程序写商城的人去实现吧（监听事件，下拉刷新，上拉加载下一页，我在git的某一次提交里尝试了，成了一半，但是前端的h5我实在写不来），转眼间要毕业了，今年记得把flag给拔下。</view>
+</view>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
+   	<!-- UIkit JS -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+</head>
+<body>
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="index.html"><span class="uk-text-bold uk-text-danger">QR-Code </span> Product SEcurity</a>
+    </div>
+    <div class="uk-navbar-right">
+        <a class="uk-margin-small-right uk-button uk-button-primary" href="/product/admin/"><span uk-icon="icon: database"></span>　To Manger Pro</a>
+        <a class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+    </div> 
+</nav>
+
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+    <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+        <button class="uk-modal-close-full" type="button" uk-close></button>
+        <form class="uk-search uk-search-large" method = 'get' action="/product/search">
+            <input name="searchInfo" class="uk-search-input uk-text-center" type="search" placeholder="Search..." autofocus>
+        </form>
+    </div>
+</div>
+<div class="uk-alert-success uk-alert" uk-alert="">
+                                <a href="#" class="uk-alert-close uk-close uk-icon" uk-close=""></a>
+                                <p><span uk-icon="icon: commenting"></span>　Please Cilck The Button to watch the QR-Code</p>
+                            </div>
+<div style="width: 90%;margin-left: auto;margin-right: auto;">
+
+
+	<table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+        <thead>
+            <tr>               
+                <th class="uk-table-shrink ">id</th>
+                <th class="uk-table-">Name</th>
+                <th class="uk-table-expand">Description</th>
+                <th class="uk-table-shrink uk-text-nowrap">Creat Time</th>
+                <th class="uk-table-small uk-text-center">More</th>
+                <th class="uk-table-small uk-text-center">Check</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% load pagination_tags %}
+        {% autopaginate products 10 %}
+	    {% for product in products %}
+	        <tr>
+             <td class="uk-table-small ">{{product.id}}</td>
+             <td class="uk-text-truncate">{{product.name}}</td>　
+             <td class="uk-text-truncate">{{product.comment}}</td>　
+             <td class="uk-text-nowrap">{{product.creatTime}}</td>
+                <td class="uk-table-small uk-text-right">
+                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-close-default">More</button>
+                </td>
+                <td class="uk-table-small uk-text-right">
+                <a class="uk-margin-small-right uk-button uk-button-secondary " href="#modal-media-image" uk-toggle>
+                    <span uk-icon="icon: image"></span>　Open QR-Code</a>
+                </td>
+            </tr>
+            <div id="modal-media-image" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <img src="qrcode/{{ product.code }}" alt="">
+                </div>
+            </div>
+            <div id="modal-close-default" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <h2 class="uk-modal-title">{{product.name}}</h2>
+                    <p><span class="uk-text-success" >No:{{product.no}}</span></p>
+                    <p>{{product.comment}}</p>
+                    <p class="uk-text-right"><span class="uk-text-danger" >Upload on:{{product.creatTime}}</span></p>
+                </div>
+            </div>　
+        {% endfor %}
+    	{% paginate %}
+    	</tbody>
+
+    </table>
+</div>
+</div>
+
+<a href="#" uk-totop uk-scroll></a>
+</body>
+</html>

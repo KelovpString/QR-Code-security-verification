@@ -1,0 +1,47 @@
+<view class='page {{showviewSu?\'displayview\':\'displaynoneview\'}}'>
+  <view class='weui-cells'>
+  <view class="weui-msg">
+    <view  class="weui_icon_area"><icon type="success" size='40'></icon></view>
+    <text class="weui_msg_title">{{textHead}}</text>
+  </view> 
+    <view class='weui-cell'>
+      <view class='weui-cell__bd weui-cell_primary'><text>编号</text></view>
+      <view class='weui-cell__ft'>{{pro.no}}</view>
+    </view>
+    <view class='weui-cell'>
+      <view class='weui-cell__bd weui-cell_primary'><text>名称</text></view>
+      <view class='weui-cell__ft'>{{pro.name}}</view>
+    </view>
+    <view class='weui-cell'>
+      <view class='weui-cell__bd weui-cell_primary'><text>详细信息</text></view>
+      <view class='weui-cell__ft'>{{pro.comment}}</view>
+    </view>
+    <view class='weui-cell'>
+      <view class='weui-cell__bd weui-cell_primary'><text>创建时间</text></view>
+      <view class='weui-cell__ft'>{{pro.creatTime}}</view>
+    </view>
+    <view class='weui-cell'>
+      <view class='weui-cell__bd weui-cell_primary'><text>更新时间</text></view>
+      <view class='weui-cell__ft'>{{pro.updateTime}}</view>
+    </view>
+  </view>
+</view>
+<view class='page {{showviewfail?\'displayview\':\'displaynoneview\'}}'>
+  <view class="weui-msg">
+    <view  class="weui_icon_area"><icon type="cancel" size='85'></icon></view>
+    <text class="weui_msg_title">{{textHead}}</text>
+  </view>
+</view>
+<view class='page {{showview404?\'displayview\':\'displaynoneview\'}}'>
+  <view class="weui-msg">
+    <view  class="weui_icon_area"><icon type="warn" size='85'></icon></view>
+    <text class="weui_msg_title">{{textHead}}</text>
+  </view>
+</view>
+
+<view class='page {{showmain?\'displayview\':\'displaynoneview\'}} image-s'>
+  <image src="http://p3o6auf5u.bkt.clouddn.com/info.jpg" mode="widthFix" class='image-s'></image>
+</view>
+<view class='button-defalut'>
+  <button type="primary" size="default" bindtap="scanner"> 点击扫一扫 </button>
+</view> 

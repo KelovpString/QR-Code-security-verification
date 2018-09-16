@@ -1,0 +1,27 @@
+/* pages/scan/scan.wxss */
+.button-defalut{
+  position: fixed;
+  bottom: 15px;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+.title-text{
+  text-align: center;
+}
+.displayview{
+  display: block;
+}
+.displaynoneview{
+  display: none;
+}
+.image-s{
+  position: fixed;
+  top: 25px;
+  width: 85%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 75%;
+}
