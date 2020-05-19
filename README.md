@@ -47,4 +47,4 @@
 > - 好像真的搞完了...
 
 > 备注 ： 因为之前论文查重我删除掉了这个仓库，现在还原回来，继续搞事~
-  博客网址： https://stringair.xin/nostring/blog/python/922/
+  博客网址： https://kelovp.tech/nostring/blog/python/922/
